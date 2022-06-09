@@ -1,8 +1,111 @@
 body {
-    margin: 2rem;
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-size: 1.3rem;
+  word-wrap: break-word;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+section > div {
+  margin: 2rem;
+  text-align: left;
+  width: 50%;
+}
+
+.right {
+  text-align: right;
+}
+
+.logo {
+  text-align: center;
+}
+
+.topnav {
+  background-color: whitesmoke;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.topnav a {
+  float: left;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.topnav a:hover {
+  font-weight: 700;
+}
+
+.avatar {
+  max-width: 22rem;
+  max-height: 22rem;
+  border-radius: 50%;
+}
+
+.logo-img {
+  max-width: 30rem;
+  max-height: 30rem;
+}
+
+.landing p {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 3rem;
+    margin: 0.5rem;
   }
+  h2 {
+    font-size: 2rem;
+  }
+  section {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+  }
+  section > div {
+    text-align: center;
+  }
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(90px);
+  opacity: 0.2;
+  transition: 0.9s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
