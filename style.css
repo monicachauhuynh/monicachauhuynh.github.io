@@ -32,18 +32,16 @@ section {
   justify-content: center;
 }
 
-section > div {
-  margin: 2rem;
-  text-align: left;
-  width: 50%;
-}
-
 .right {
   text-align: right;
+  flex: 50%;
+  margin: 2rem;
 }
 
-.logo {
-  text-align: center;
+.left {
+  text-align: left;
+  flex: 50%;
+  margin: 2rem;
 }
 
 .topnav {
@@ -66,14 +64,13 @@ section > div {
 }
 
 .avatar {
-  max-width: 22rem;
-  max-height: 22rem;
+  max-width: 30vw;
   border-radius: 50%;
 }
 
 .logo-img {
-  max-width: 30rem;
-  max-height: 30rem;
+  max-width: 40vw;
+  max-height: 60vh;
 }
 
 .landing p {
@@ -89,12 +86,26 @@ section > div {
     font-size: 2rem;
   }
   section {
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    margin: 0 1rem;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem;
   }
   section > div {
+    width: 100%;
+  }
+  .left,
+  .right {
     text-align: center;
+  }
+  .logo-img {
+    max-width: 70vw;
+    max-height: 50vh;
+  }
+  .avatar{
+    max-width: 70vw;
   }
 }
 
