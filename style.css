@@ -41,6 +41,14 @@ a {
   color: #333;
 }
 
+a:hover {
+  font-weight: 700;
+}
+
+a i {
+  color: #333;
+}
+
 .right {
   text-align: right;
   flex: 50%;
@@ -56,27 +64,27 @@ a {
 .navbar {
   background-color: whitesmoke;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
-  padding: 1rem;
 }
 
-.nav-item a:hover {
-  font-weight: 700;
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 2.5rem;
+}
+
+.nav-logo {
+  width: 2rem;
+  border-radius: 50%;
 }
 
 .hamburger {
   display: none;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #101010;
 }
 
 .avatar {
@@ -137,16 +145,43 @@ a {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
 
-@media screen and (max-width: 600px) {
-  
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-left: 1rem;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
