@@ -79,7 +79,7 @@ a i {
 }
 
 .nav-logo {
-  width: 2rem;
+  width: 2.5rem;
   border-radius: 50%;
 }
 
@@ -149,28 +149,33 @@ a i {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 5rem;
+    top: 2.5rem;
     flex-direction: column;
     background-color: #fff;
-    width: 100%;
-    border-radius: 10px;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 0;
   }
 
   .nav-menu.active {
     left: 0;
   }
 
+  .hidden-mobile {
+    display: none;
+  }
+
   .nav-item {
-    margin: 2.5rem 0;
+    margin: 1rem 0;
+    font-size: 2rem;
   }
 
   .hamburger {
     display: block;
     cursor: pointer;
-    padding-left: 1rem;
+    padding: 1rem;
   }
 
   .hamburger.active .bar:nth-child(2) {
