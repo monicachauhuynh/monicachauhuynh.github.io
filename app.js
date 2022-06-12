@@ -1,4 +1,4 @@
-// reveal elements as screen is scrolled
+/* reveal elements as screen is scrolled */
 function reveal() {
   var reveals = document.querySelectorAll(".reveal");
 
@@ -28,7 +28,7 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-// close hamburger menu on item click
+/* close hamburger menu on item click */
 const navLink = document.querySelectorAll(".nav-link");
 
 navLink.forEach((n) => {
@@ -39,3 +39,4 @@ function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
 }
+

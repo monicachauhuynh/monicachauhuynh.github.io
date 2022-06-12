@@ -9,10 +9,6 @@ body {
   color: #333;
 }
 
-h1 {
-  font-size: 4rem;
-}
-
 h2 {
   font-size: 3rem;
 }
@@ -61,6 +57,7 @@ a i {
   margin: 2rem;
 }
 
+/* nav bar styling */
 .navbar {
   background-color: whitesmoke;
   display: flex;
@@ -87,6 +84,28 @@ a i {
   display: none;
 }
 
+/* landing page styling */
+.landing h1 {
+  background-image: url(https://media.giphy.com/media/TM8Fu4TrgkNSmXh5cw/giphy-downsized-large.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 7vw;
+  margin: 1rem;
+}
+
+.landing p, h1 {
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
 .avatar {
   max-width: 30vw;
   border-radius: 50%;
@@ -101,6 +120,14 @@ a i {
   font-size: 1.5rem;
 }
 
+.landing > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* animations*/
 .reveal {
   position: relative;
   transform: translateY(90px);
@@ -121,18 +148,15 @@ a i {
 
 @keyframes fadeInAnimation {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
+/* responsive */
 @media (max-width: 800px) {
-  h1 {
-    font-size: 3rem;
-    margin: 0.5rem;
-  }
   h2 {
     font-size: 2rem;
   }
@@ -146,6 +170,17 @@ a i {
   }
   section > div {
     width: 100%;
+  }
+  .landing > div {
+    height: 100vh;
+  }
+  .landing h1 {
+    font-size: 9vh !important;
+    margin-bottom: 2.5rem;
+  }
+  .landing p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
   }
   .left,
   .right {
@@ -172,6 +207,7 @@ a i {
     text-align: center;
     transition: 0.3s;
     padding: 0;
+    z-index: 9999;
   }
 
   .nav-menu.active {
@@ -205,3 +241,5 @@ a i {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+
