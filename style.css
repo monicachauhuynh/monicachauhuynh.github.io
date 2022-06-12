@@ -113,6 +113,21 @@ a i {
   opacity: 1;
 }
 
+.fade {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 3rem;
