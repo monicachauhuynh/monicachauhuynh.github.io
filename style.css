@@ -57,9 +57,41 @@ a i {
   margin: 2rem;
 }
 
+/* dark mode */
+.dark-mode {
+  background-image: url(https://media.giphy.com/media/UUHUfrG6NsXzG/giphy.gif) !important;
+  color: whitesmoke;
+}
+
+.dark-mode a {
+  color: whitesmoke;
+}
+
+.dark-mode .hamburger i {
+  color: whitesmoke;
+}
+
+.color-mode {
+  position: fixed;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 100;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  border: 0.5px solid #fff;
+  box-shadow: 0.8px 1.2px #EAE5E5;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.color-mode:hover {
+  background-color: #EAE5E5;
+  box-shadow: none;
+}
+
 /* nav bar styling */
 .navbar {
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -80,6 +112,11 @@ a i {
   border-radius: 50%;
 }
 
+.navbar button {
+  justify-self: right;
+  align-self: right;
+}
+
 .hamburger {
   display: none;
 }
@@ -95,7 +132,8 @@ a i {
   margin: 1rem;
 }
 
-.landing p, h1 {
+.landing p,
+h1 {
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 }
@@ -241,5 +279,3 @@ a i {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
-

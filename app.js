@@ -17,7 +17,7 @@ function reveal() {
 
 window.addEventListener("scroll", reveal);
 
-// show hamburger menu
+/* show hamburger menu */
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -38,5 +38,18 @@ navLink.forEach((n) => {
 function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
+}
+
+/* dark mode */
+const colorModeButton = document.querySelector(".color-mode");
+colorModeButton.addEventListener("click", colorMode);
+
+function colorMode() {
+  var element = document.body;
+  var navBar = document.querySelector(".navbar");
+  element.classList.toggle("dark-mode");
+  navBar.classList.toggle("dark-mode");
+  navMenu.classList.toggle("dark-mode");
+  hamburger.classList.toggle("dark-mode");
 }
 
