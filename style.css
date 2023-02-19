@@ -26,6 +26,8 @@ section {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 li {
@@ -45,16 +47,17 @@ a i {
   color: #333;
 }
 
-.right {
-  text-align: right;
-  flex: 50%;
-  margin: 2rem;
-}
-
-.left {
+.landing-text {
   text-align: left;
   flex: 50%;
-  margin: 2rem;
+  margin: 5rem;
+}
+
+
+.landing-img {
+  text-align: center;
+  flex: 50%;
+  margin: 5rem;
 }
 
 /* dark mode */
@@ -204,7 +207,7 @@ h1 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 2rem;
+    margin: 1rem;
   }
   section > div {
     width: 100%;
@@ -223,6 +226,7 @@ h1 {
   .left,
   .right {
     text-align: center;
+    flex: 80%;
   }
   .logo-img {
     max-width: 70vw;
