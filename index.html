@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="thumbnail" content="/Assets/thumbnail.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@350&display=swap"
       rel="stylesheet"
     />
     <link
@@ -26,11 +26,11 @@
             <a href="#work"><img src="/Assets/icon.png" class="nav-logo" /></a>
           </li>
           <li class="nav-item">
-            <a href="#projects" class="nav-link">Projects</a>
-          </li>
-          <li class="nav-item">
             <a href="#about" class="nav-link">About</a>
-          </li>   
+          </li> 
+          <li class="nav-item">
+            <a href="#projects" id="scrollToWork" class="nav-link">Projects</a>
+          </li>  
           <li class="nav-item">
             <a
               href="https://www.linkedin.com/in/monicachauhuynh/"
@@ -52,15 +52,15 @@
     </header>
     <section class="landing fade">
       <div>
-        <h1>Hi, I'm Monica.</h1>
-        <p>User Experience Designer</p>
-        <p>Computer Science + Business @ UBC</p>
+        <h1>Hey there, I'm Monica, a Vancouver-based UX designer. I like meaningful products and anything tech/ design. 
+        </h1>
       </div>
     </section>
      <section class="work reveal">
       <div class="landing-text">
         <h2>Poe</h2>
-        <p>Reimagining Quora's Latest AI Chatbot App: How I Took a Dive into UX Design for AI</p>
+        <h3>Reimagining Quora's Latest AI Chatbot App: How I Took a Dive into UX Design for AI</p>
+        <button class="button" onclick="window.location.href = 'poe.html'">View Project</button>
       </div>
       <div class="landing-img">
         <a href="#" target="_blank"
@@ -76,13 +76,13 @@
       </div>
       <div class="landing-text">
         <h2>ESG Merch Store</h2>
-        <p>Designing and Developing East Side Games' Merch Store, an E-Commerce Web Application</p>
+        <h3>Designing and Developing East Side Games' Merch Store, a Love Letter to the ESG Merch Culture</h3>
       </div>
     </section>
     <section class="work reveal">
       <div class="landing-text">
         <h2>Data & Beyond</h2>
-        <p>Designing for a Data Science Conference Hosted by UBC BizTech, UBC's Largest Tech Club</p>
+        <h3>Leading the Design Campaign for Data & Beyond, the First Data Science Conference Hosted by UBC BizTech, UBC's Largest Tech Club</h3>
       </div>
       <div class="landing-img">
         <a href="#" target="_blank"
@@ -91,5 +91,9 @@
       </div>
     </section>
     <script type="text/javascript" src="app.js"></script>
+    <script> 
+    let workBtn = document.getElementById('scrollToWork'); 
+    workBtn.addEventListener('click', () => scrollToSection('.work'));  
+    </script>
   </body>
 </html>

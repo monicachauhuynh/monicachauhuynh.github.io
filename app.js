@@ -53,3 +53,9 @@ function colorMode() {
   hamburger.classList.toggle("dark-mode");
 }
 
+function scrollToSection(section) {
+  window.scrollTo({
+    top: document.querySelector(section).offsetTop,
+    behavior: 'smooth'
+  });
+}
