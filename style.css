@@ -104,6 +104,16 @@ a i {
   background-color: black;
 }
 
+.dark-mode .button {
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+}
+
+.dark-mode .button:hover {
+  background: whitesmoke;
+  color: #333;
+  }
+
 .color-mode {
   position: fixed;
   top: 0.6rem;
