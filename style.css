@@ -29,7 +29,7 @@ h3 {
 }
 
 section {
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: left;
@@ -62,6 +62,10 @@ a i {
   word-wrap: normal;
 }
 
+.landing-text h3 {
+  font-weight: 400;
+}
+
 
 .landing-img {
   text-align: center;
@@ -71,8 +75,13 @@ a i {
 
 .project-text {
   text-align: left;
-  flex: 50%;
+  flex: 100%;
   margin: 5rem;
+}
+
+.project-img {
+  max-width: 95vw;
+  max-height: 95vh;
 }
 
 .button {
@@ -248,7 +257,10 @@ h1 {
 /* responsive */
 @media (max-width: 820px) {
   h2 {
-    font-size: 3.2rem;
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.6rem;
   }
   p {
     font-size: 1.2rem;
@@ -268,7 +280,7 @@ h1 {
     height: 100vh;
   }
   .landing h1 {
-    font-size: 2.6rem !important;
+    font-size: 2.5rem !important;
     margin: 0.3rem !important;
   }
   .left,
