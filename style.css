@@ -211,8 +211,13 @@ h1 {
 }
 
 .logo-img {
+  max-height: 90vh;
+}
+
+.demo-img {
   max-width: 40vw;
   max-height: 60vh;
+  margin: 2rem;
 }
 
 .landing p {
