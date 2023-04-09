@@ -211,7 +211,8 @@ h1 {
 }
 
 .logo-img {
-  max-height: 90vh;
+  max-width: 40vw;
+  max-height: 60vh;
 }
 
 .demo-img {
