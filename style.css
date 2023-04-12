@@ -6,7 +6,7 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
+  color: #484b6a;
 }
 
 p {
@@ -33,8 +33,10 @@ section {
   display: flex;
   flex-direction: row;
   align-items: left;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 li {
@@ -43,7 +45,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: #7B9BEB;
 }
 
 a:hover {
@@ -51,7 +53,7 @@ a:hover {
 }
 
 a i {
-  color: #333;
+  color: #484b6a;
 }
 
 .landing-text {
@@ -88,35 +90,35 @@ a i {
   background: none;
   border-radius: 50px;
   padding: 0.5rem 1.2rem;
-  color: #333;
-  border: 1.5px solid #333;
+  color: #484b6a;
+  border: 1.5px solid #484b6a;
   font-family: 'Manrope';
   margin-top: 2rem;
   font-size: 1.2rem;
 }
 
 .button:hover {
-  background: #333;
-  color: whitesmoke;
+  background: #484b6a;
+  color: #fefefe;
   cursor: pointer;
   }
 
 /* dark mode */
 .dark-mode {
   background-image: url(https://media.giphy.com/media/UUHUfrG6NsXzG/giphy.gif) !important;
-  color: whitesmoke;
+  color: #dedede;
 }
 
-.dark-mode a {
-  color: whitesmoke;
+.dark-mode .nav-menu a {
+  color: #dedede;
 }
 
 .dark-mode .landing h1 {
-  color: whitesmoke;
+  color: #dedede;
 }
 
 .dark-mode .hamburger i {
-  color: whitesmoke;
+  color: #dedede;
 }
 
 .dark-mode .project-text {
@@ -124,13 +126,13 @@ a i {
 }
 
 .dark-mode .button {
-  color: whitesmoke;
-  border: 1px solid whitesmoke;
+  color: #dedede;
+  border: 1px solid #dedede;
 }
 
 .dark-mode .button:hover {
-  background: whitesmoke;
-  color: #333;
+  background: #dedede;
+  color: #484b6a;
   }
 
 .color-mode {
@@ -139,8 +141,8 @@ a i {
   right: 0.6rem;
   z-index: 100;
   border-radius: 50%;
-  background-color: whitesmoke;
-  border: 0.5px solid #fff;
+  background-color: #dedede;
+  border: 0.5px solid #fefefe;
   box-shadow: 0.8px 1.2px #EAE5E5;
   font-size: 1.5rem;
   opacity: 0.7;
@@ -153,7 +155,7 @@ a i {
 
 /* nav bar styling */
 .navbar {
-  background-color: white;
+  background-color: #fefefe;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -186,17 +188,31 @@ a i {
 /* landing page styling */
 .landing h1 {
   background-size: cover;
-  color: #333;
-  -moz-background-clip: text;
+  color: #484b6a;
   -webkit-background-clip: text;
+	background-clip: text;
   font-size: 4rem;
-  margin: 7rem;
+  margin: 4.5rem;
 }
 
 .landing p,
 h1 {
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #484b6a;
+}
+
+.landing-section {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 @keyframes scale {
@@ -276,7 +292,7 @@ h1 {
   p {
     font-size: 1.1rem;
   }
-  section {
+  section, .landing-section {
     height: 100%;
     flex-direction: column;
     align-items: center;
@@ -316,7 +332,7 @@ h1 {
     left: -100%;
     top: 2.5rem;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #fefefe;
     width: 100vw;
     height: 100vh;
     text-align: center;
