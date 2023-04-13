@@ -1,18 +1,24 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #484b6a;
-  background-color: #FEFEFE;
+  color: #141414;
+  background-color: #fcf9f7;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   word-wrap: normal;
+  font-family: "EB Garamond";
+}
+br {
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin-top: 0; /* change this to whatever height you want it */
 }
 
 h2 {
@@ -34,8 +40,8 @@ section {
   display: flex;
   flex-direction: row;
   align-items: left;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-left: 13rem;
+  padding-right: 13rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -45,8 +51,8 @@ li {
 }
 
 a {
-  text-decoration: none;
-  color: #7B9BEB;
+  text-decoration: underline;
+  color: #141414;
 }
 
 a:hover {
@@ -54,7 +60,7 @@ a:hover {
 }
 
 a i {
-  color: #484b6a;
+  color: #141414;
 }
 
 .landing-text {
@@ -62,6 +68,17 @@ a i {
   flex: 50%;
   margin: 5rem;
   font-size: 2rem;
+  word-wrap: normal;
+}
+
+.landing-bio {
+  text-align: left;
+  flex: 50%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 4rem;
+  margin-right: 19rem;
+  font-size: 3rem;
   word-wrap: normal;
 }
 
@@ -85,6 +102,8 @@ a i {
 .project-img {
   max-width: 100%;
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .button {
@@ -92,26 +111,29 @@ a i {
   border-radius: 50px;
   padding: 1rem 1.7rem;
   color: #86898C;
-  border: 0px solid #484b6a;
-  font-family: 'Manrope';
+  border: 0px solid #141414;
+  font-family: 'Helvetica';
   margin-top: 1.8rem;
   font-size: 1rem;
   box-shadow: 7.87012px 7.87012px 15.7402px rgba(114, 142, 171, 0.1), 
   -23.6104px -23.6104px 78.7012px #FFFFFF, 15.7402px 15.7402px 78.7012px 
   rgba(111, 140, 176, 0.41);
-  font-weight: 700;
 }
 
 
 .button:hover {
   background: #7B9BEB;
-  color: #FEFEFE;
+  color: #fcf9f7;
   cursor: pointer;
   }
 
 /* dark mode */
 .dark-mode {
   background-image: url(https://media.giphy.com/media/UUHUfrG6NsXzG/giphy.gif) !important;
+  color: #dedede;
+}
+
+.dark-mode a {
   color: #dedede;
 }
 
@@ -132,14 +154,14 @@ a i {
 }
 
 .dark-mode .button {
-  color: #484b6a;
+  color: #141414;
   background: #dedede;
   box-shadow: none;
 }
 
 .dark-mode .button:hover {
   background: #7B9BEB;
-  color: #fefefe;
+  color: #fcf9f7;
   }
 
 .color-mode {
@@ -149,7 +171,7 @@ a i {
   z-index: 100;
   border-radius: 50%;
   background-color: #dedede;
-  border: 0.5px solid #FEFEFE;
+  border: 0.5px solid #fcf9f7;
   box-shadow: 0.8px 1.2px #EAE5E5;
   font-size: 1.5rem;
   opacity: 0.7;
@@ -198,7 +220,7 @@ a i {
 /* landing page styling */
 .landing h1 {
   background-size: cover;
-  color: #484b6a;
+  color: #141414;
   -webkit-background-clip: text;
 	background-clip: text;
   font-size: 4rem;
@@ -214,7 +236,6 @@ h1 {
 .nav-menu a {
   text-decoration: none;
   color: #86898C;
-  font-weight: 700;
 }
 
 .nav-menu a:hover {
@@ -252,8 +273,13 @@ h1 {
   margin: 0.5rem;
 }
 
-.landing p {
-  font-size: 1.5rem;
+.landing-section p {
+  font-size: 1.8rem;
+}
+
+.landing-section a {
+  font-family: 'EB Garamond';
+  font-size: 1.8rem;
 }
 
 .landing > div {
@@ -300,9 +326,11 @@ h1 {
 }
   h2 {
     font-size: 2rem;
+    padding-top: 6rem;
   }
   h3 {
     font-size: 1.6rem;
+    padding-top: 3rem;
   }
   p {
     font-size: 1.1rem;
@@ -347,7 +375,7 @@ h1 {
     left: -100%;
     top: 2.5rem;
     flex-direction: column;
-    background-color: #FEFEFE;
+    background-color: #fcf9f7;
     width: 100vw;
     height: 100vh;
     text-align: center;
