@@ -9,9 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="thumbnail" content="/Assets/thumbnail.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;750&display=swap"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@430;750&display=swap"
       rel="stylesheet"
     />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;750&display=swap"
+    rel="stylesheet"
+  />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,17 +30,17 @@
             <a href="/"><img src="/Assets/icon.png" class="nav-logo" /></a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="about.html" class="nav-link">About</a>
           </li> 
           <li class="nav-item">
-            <a href="/" id="scrollToWork" class="nav-link">PROJECTS</a>
+            <a class="nav-link">Projects</a>
           </li>  
           <li class="nav-item">
             <a
               href="https://www.linkedin.com/in/monicachauhuynh/"
               target="_blank"
               class="nav-link"
-              >LINKEDIN</a
+              >LinkedIn</a
             >
           </li>
         </ul>
@@ -46,7 +50,7 @@
           </button>
         </div>
         <div class="hamburger">
-          <a href="#work"><i class="fa fa-bars"></i></a>
+          <a href=""><i class="fa fa-bars"></i></a>
         </div>
       </nav>
     </header>
@@ -63,20 +67,14 @@
     </section>
     <section class="work">
       <div class="project-text reveal">
-        <h2>Personal Note</h2>
-        <p>The first quarter of 2023 marks a truly special time in every aspect of my life. After a while 
-          in software development, I finally mustered up all of my courage to make the shift to UX design. 
-          In every team that I have been so fortunate to be a part of, I realize I have always cared more 
-          about interfaces and how to deliver a more inclusive, intuitive experience for users. I began to 
-          incorporate UX principles into my project at work, strengthen my visual design skills by serving as 
-          a Director of Design at <a target="_blank" href="https://www.linkedin.com/company/ubcbiztech/mycompany/" class="nav-link">
-          UBC BizTech</a>, and most importantly work on a UX design certificate at BrainStation. 
-          I started this project in that certificate program, where I was mentored by Paul Pittman, former Senior UX 
-          Designer at Amazon. </p>
-          <p><b>In this case study, I take you through my unsolicited UX 
-            redesign of <a target="_blank" href="https://techcrunch.com/2023/02/06/quora-opens-its-new-ai-chatbot-app-poe-to-the-general-public/">Poe</a>, 
-            Quora's ultimate AI chatbot app. </b></p>
-
+        <h2>TLDR</h2>
+        <p>In this UX case study, I take you through my unsolicited redesign of  <a target="_blank" href="https://techcrunch.com/2023/02/06/quora-opens-its-new-ai-chatbot-app-poe-to-the-general-public/">Poe</a>, Quora's ultimate AI chatbot app. 
+          As an enthusiastic user of Poe, I have found that the user experience can be a bit frustrating to navigate at times. 
+          My redesign solution includes a revised information architecture of the app and a UI revamp for a more immersive, 
+          visually appealing browsing experience. Based on user interviews, I believe that this would be a positive step towards improving 
+          the user experience and making the product more accessible to a wider range of users. </p>
+          <p>I also want to give a quick shoutout to Paul Pittman, former Senior UX Designer at Amazon, for mentoring me from the very beginning of this process.</p>
+          
             <h2>Poe, Where All the AI Bots Hang Out</h2>
         <p>Since OpenAI released its blockbuster AI bot, ChatGPT, in November 2022, it has quickly amassed 
           an impressive 100 million users within just two months of its release. The explosive popularity of 
@@ -198,8 +196,8 @@
    
     <script type="text/javascript" src="app.js"></script>
     <script> 
-    let designBtn = document.getElementById('scrollToDesign'); 
-    designBtn.addEventListener('click', () => scrollToSection('.redesign'));  
+    let workBtn = document.getElementById('scrollToWork'); 
+    workBtn.addEventListener('click', () => scrollToSection('.work'));  
     </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -71,17 +71,6 @@ a i {
   word-wrap: normal;
 }
 
-.landing-bio {
-  text-align: left;
-  flex: 50%;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  margin-left: 4rem;
-  margin-right: 19rem;
-  font-size: 3rem;
-  word-wrap: normal;
-}
-
 .landing-text h3 {
   font-weight: 400;
 }
@@ -141,7 +130,7 @@ a i {
   color: #dedede;
 }
 
-.dark-mode .landing h1 {
+.dark-mode .landing-section h1 {
   color: #dedede;
 }
 
@@ -218,13 +207,22 @@ a i {
 }
 
 /* landing page styling */
-.landing h1 {
+.landing-section h1 {
   background-size: cover;
   color: #141414;
   -webkit-background-clip: text;
 	background-clip: text;
-  font-size: 4rem;
-  margin: 4.5rem;
+  font-size: 5rem;
+  text-align: left;
+  flex: 50%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  word-wrap: normal;
+  font-family: 'EB Garamond';
+  line-height: 110%;
+  font-weight: 430;
 }
 
 .landing p,
@@ -235,11 +233,12 @@ h1 {
 
 .nav-menu a {
   text-decoration: none;
-  color: #86898C;
+  color: #141414;
 }
 
 .nav-menu a:hover {
-  color: #7B9BEB;
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 .landing-section {
@@ -279,7 +278,10 @@ h1 {
 
 .landing-section a {
   font-family: 'EB Garamond';
-  font-size: 1.8rem;
+}
+
+.landing-bio a {
+  font-family: 'EB Garamond';
 }
 
 .landing > div {
@@ -351,9 +353,10 @@ h1 {
   .landing > div {
     height: 100vh;
   }
-  .landing h1 {
+  .landing-section h1 {
     font-size: 2.5rem !important;
     margin: 0.3rem !important;
+    line-height: 140%;
   }
   .left,
   .right {

@@ -9,9 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="thumbnail" content="/Assets/thumbnail.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;750&display=swap"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@430;750&display=swap"
       rel="stylesheet"
     />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;750&display=swap"
+    rel="stylesheet"
+  />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,17 +30,17 @@
             <a href="/"><img src="/Assets/icon.png" class="nav-logo" /></a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="about.html" class="nav-link">About</a>
           </li> 
           <li class="nav-item">
-            <a id="scrollToWork" class="nav-link">PROJECTS</a>
+            <a id="scrollToProjects" class="nav-link">Projects</a>
           </li>  
           <li class="nav-item">
             <a
               href="https://www.linkedin.com/in/monicachauhuynh/"
               target="_blank"
               class="nav-link"
-              >LINKEDIN</a
+              >LinkedIn</a
             >
           </li>
         </ul>
@@ -46,14 +50,18 @@
           </button>
         </div>
         <div class="hamburger">
-          <a href="#work"><i class="fa fa-bars"></i></a>
+          <a href=""><i class="fa fa-bars"></i></a>
         </div>
       </nav>
     </header>
     <section class="landing-section fade">
       <div class="landing-bio">
-        <h1>Hi there, I'm Monica, a Vancouver-based UX designer.
-          I like anything tech + design.
+        <h1>Hello World. I'm Monica Huynh, a Vancouver-based UX designer.
+          I like anything tech + design. Learn more <a href="about.html">about</a> me 
+          or jump straight to my <a id="scrollToWork">work</a>. Don't hesitate to <a
+          href="https://www.linkedin.com/in/monicachauhuynh/"
+          target="_blank"
+          >drop a note</a>.
         </h1>
        
       </div>
@@ -63,7 +71,8 @@
       <div class="landing-text">
         <h2>Poe</h2>
         <p>Reimagining Quora's Latest AI Chatbot App: How I Took a Dive into UX Design for AI</p>
-        <a href='poe.html'>View Project →</a>
+        <a href='poe.html'>View Project <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-22ee7e7c=""><polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-22ee7e7c=""></polygon></svg></a>
+        
       </div>
       <div class="landing-img">
         <a href="#" target="_blank"
@@ -80,7 +89,7 @@
       <div class="landing-text">
         <h2>ESG Merch Store</h2>
         <p>Developing East Side Games Studio's Merch Store, a Love Letter to the ESG Merch Culture</p>
-        <a>Coming Soon →</a>
+        <a>Coming Soon <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-22ee7e7c=""><polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-22ee7e7c=""></polygon></svg></a>
       </div>
     </section>
     <section class="landing-section reveal">
@@ -88,7 +97,7 @@
         <h2>Data & Beyond</h2>
         <p>Designing Data & Beyond by UBC BizTech, 
           UBC's Largest Tech Club</p>
-          <a>Coming Soon →</a>
+          <a>Coming Soon <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-22ee7e7c=""><polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-22ee7e7c=""></polygon></svg></a>
       </div>
       <div class="landing-img">
         <a href="#" target="_blank"
@@ -98,6 +107,8 @@
     </section>
     <script type="text/javascript" src="app.js"></script>
     <script> 
+    let projectBtn = document.getElementById('scrollToProjects'); 
+    projectBtn.addEventListener('click', () => scrollToSection('.projects'));  
     let workBtn = document.getElementById('scrollToWork'); 
     workBtn.addEventListener('click', () => scrollToSection('.projects'));  
     </script>
