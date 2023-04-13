@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/Assets/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>monica huynh</title>
+    <title>Monica Huynh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="thumbnail" content="/Assets/thumbnail.png" />
@@ -26,17 +26,17 @@
             <a href="/"><img src="/Assets/icon.png" class="nav-logo" /></a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
           </li> 
           <li class="nav-item">
-            <a id="scrollToWork" class="nav-link">Projects</a>
+            <a id="scrollToWork" class="nav-link">PROJECTS</a>
           </li>  
           <li class="nav-item">
             <a
               href="https://www.linkedin.com/in/monicachauhuynh/"
               target="_blank"
               class="nav-link"
-              >LinkedIn</a
+              >LINKEDIN</a
             >
           </li>
         </ul>
@@ -50,18 +50,19 @@
         </div>
       </nav>
     </header>
-    <section class="landing fade">
-      <div >
+    <section class="landing-section fade">
+      <div class="landing-text">
         <h1>Hi there, I'm <a href="about.html">Monica Huynh</a>, a Vancouver-based UX designer.
           I like anything tech + design 💡
         </h1>
+        <a target="_blank" href="https://www.linkedin.com/in/monicachauhuynh/"><button class="button"  >LET'S CONNECT!</button></a>
       </div>
     </section>
    
-     <section class="landing-section reveal">
+     <section class="landing-section projects reveal">
       <div class="landing-text">
         <h2>Poe</h2>
-        <h3>Reimagining Quora's Latest AI Chatbot App: How I Took a Dive into UX Design for AI</p>
+        <h3>Reimagining Quora's Latest AI Chatbot App: How I Took a Dive into UX Design for AI</h3>
         <button class="button" onclick="window.location.href = 'poe.html'">VIEW PROJECT</button>
       </div>
       <div class="landing-img">
@@ -98,7 +99,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script> 
     let workBtn = document.getElementById('scrollToWork'); 
-    workBtn.addEventListener('click', () => scrollToSection('.landing-section'));  
+    workBtn.addEventListener('click', () => scrollToSection('.projects'));  
     </script>
   </body>
 </html>
