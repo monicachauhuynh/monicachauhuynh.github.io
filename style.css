@@ -95,6 +95,16 @@ a i {
   margin-bottom: 2rem;
 }
 
+.full-screen {
+  background-image: url("poe-thumbnail.png");
+  max-width: 100vw; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: none;
+  margin: none;
+}
+
 .button {
   background: none;
   border-radius: 50px;
