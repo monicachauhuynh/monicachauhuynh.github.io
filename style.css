@@ -203,23 +203,23 @@ html {
 /* dark mode */
 .dark-mode {
   background-image: url(https://media.giphy.com/media/UUHUfrG6NsXzG/giphy.gif) !important;
-  color: #dedede;
+  color: #fefefe;
 }
 
 .dark-mode a {
-  color: #dedede;
+  color: #fefefe;
 }
 
 .dark-mode .nav-menu a {
-  color: #dedede;
+  color: #fefefe;
 }
 
 .dark-mode .landing-section h1 {
-  color: #dedede;
+  color: #fefefe;
 }
 
 .dark-mode .hamburger i {
-  color: #dedede;
+  color: #fefefe;
 }
 
 .dark-mode .project-text {
@@ -228,13 +228,13 @@ html {
 
 .dark-mode .button {
   color: #141414;
-  background: #dedede;
+  background: #fefefe;
   box-shadow: none;
 }
 
 .dark-mode .button:hover {
   background: #7B9BEB;
-  color: #fcf9f7;
+  color: #fefefe;
   }
 
 .color-mode {
@@ -243,15 +243,15 @@ html {
   right: 0.6rem;
   z-index: 100;
   border-radius: 50%;
-  background-color: #dedede;
-  border: 0.5px solid #fcf9f7;
+  background-color: #fefefe;
+  border: 0.5px solid #fefefe;
   box-shadow: 0.8px 1.2px #EAE5E5;
   font-size: 1.5rem;
   opacity: 0.7;
 }
 
 .color-mode:hover {
-  background-color: #EAE5E5;
+  background-color: #fefefe;
   box-shadow: none;
 }
 /* end dark mode */
@@ -264,16 +264,6 @@ h1 {
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 }
 
-.landing-section {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
-}
 
 .landing-text {
   text-align: left;
@@ -383,7 +373,7 @@ h1 {
   p {
     font-size: 1.1rem;
   }
-  section {
+  section, .landing-section {
     height: 100%;
     flex-direction: column;
     align-items: center;
@@ -424,7 +414,7 @@ h1 {
     left: -100%;
     top: 2.5rem;
     flex-direction: column;
-    background-color: #fcf9f7;
+    background-color: #fefefe;
     width: 100vw;
     height: 100vh;
     text-align: center;
@@ -462,6 +452,19 @@ h1 {
 
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+
+  section, .landing-section {
+    padding: 2rem;
+  }
+
+  .project-section {
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+
+  h2 {
+    padding-top: 0rem;
   }
 }
 
