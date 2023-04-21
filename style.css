@@ -277,8 +277,8 @@ h1 {
 
 .landing-text {
   text-align: left;
-  flex: 50%;
-  margin: 5rem;
+  flex: 60%;
+  margin: 3rem;
   font-size: 2rem;
   word-wrap: normal;
 }
@@ -326,8 +326,8 @@ h1 {
 
 .landing-img {
   text-align: center;
-  flex: 50%;
-  margin: 3.5rem;
+  flex: 40%;
+  margin: 1.5rem;
 }
 /* end image styling */
 
@@ -383,7 +383,7 @@ h1 {
   p {
     font-size: 1.1rem;
   }
-  section, .landing-section {
+  section {
     height: 100%;
     flex-direction: column;
     align-items: center;
