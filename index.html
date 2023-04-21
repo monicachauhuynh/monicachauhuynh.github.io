@@ -9,11 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="thumbnail" content="/Assets/thumbnail.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@430;750&display=swap"
-      rel="stylesheet"
-    />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;750&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;550;750&display=swap"
     rel="stylesheet"
   />
     <link
@@ -30,19 +26,14 @@
             <a href="/"><img src="/Assets/icon.png" class="nav-logo" /></a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-          </li> 
-          <li class="nav-item">
-            <a id="scrollToProjects" class="nav-link">Projects</a>
+            <a id="scrollToProjects" class="nav-link">Design</a>
           </li>  
           <li class="nav-item">
-            <a
-              href="https://www.linkedin.com/in/monicachauhuynh/"
-              target="_blank"
-              class="nav-link"
-              >LinkedIn</a
-            >
+            <a class="nav-link">Writing</a>
           </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>  
         </ul>
         <div>
           <button class="color-mode">
@@ -54,55 +45,52 @@
         </div>
       </nav>
     </header>
-    <section class="landing-section fade">
-      <div class="landing-bio">
-        <h1>Hello World. I'm Monica Huynh, a Vancouver-based UX designer.
-          I like anything tech + design. Learn more <a href="about.html">about</a> me, see my <a id="scrollToWork">work</a>, or <a
-          href="https://www.linkedin.com/in/monicachauhuynh/"
-          target="_blank"
-          >drop a note</a>.
-        </h1>
-       
+    <section class="landing-section bio">
+      <div>
+        <p>Hello world. I'm</p>
+        <h2>Monica Huynh</h2>
+        <p>Product designer with a technical background. 
+          Passionate about coding prototypes and crafting better user experience through
+           problem-solving and aesthetics.</p>
+           <p>Currently exploring <a target="_blank" href="https://uxofai.com">the UX of AI</a> 🌱 at 
+          <a target="_blank" href="https://medium.com/innovationendeavors/the-biggest-bottleneck-for-large-language-model-startups-is-ux-ef4500e4e786">LLM startups</a> 💻, 
+          <a href="https://medium.com/@monicachauhuynh" target="_blank">writing</a> ✍️, hunting desserts 🍰, and looking forward to the next sunny day in Vancouver ☀️</p>
       </div>
     </section>
    
-     <section class="landing-section projects reveal">
-      <div class="landing-text">
-        <h2>Poe</h2>
-        <p>Redesigning Quora's latest AI chatbot app for easier navigation</p>
-        <a href='poe.html'>View Project <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-22ee7e7c=""><polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-22ee7e7c=""></polygon></svg></a>
-        
+     <section class="landing-section projects">
+      <div class="card" onclick="window.location.href='poe.html';">
+        <img src="/Assets/cover-poe.png" alt="Card image">
+        <div class="card-content">
+          <p class="subheading">UX / UI / STRATEGY</p>
+          <h3 class="card-title">Poe</h3>
+          <p class="card-text">Helping people select the best AI agents for their tasks and 
+            collectively explore use cases of generative AI</p>    
+        </div>
       </div>
-      <div class="landing-img">
-        <a href="#" target="_blank"
-          ><img src="/Assets/landing-poe.png" alt="logo" class="logo-img"
-        /></a>
-      </div>
-    </section>
-    <section class="landing-section reveal">
-      <div class="landing-img">
-        <a href="#" target="_blank"
-          ><img src="/Assets/landing-esg.png" alt="Avatar" class="logo-img"
-        /></a>
-      </div>
-      <div class="landing-text">
-        <h2>ESG Merch Store</h2>
-        <p>Designing and developing East Side Games Studio's full-stack e-commerce web application</p>
-        <a>Coming Soon <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-22ee7e7c=""><polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-22ee7e7c=""></polygon></svg></a>
+      <div class="card">
+        <img src="/Assets/cover-esg.png" alt="Card image">
+        <div class="card-content">
+          <p class="subheading">DEVELOPMENT / UX / UI</p>
+          <h3 class="card-title">ESG Merch Store</h3>
+          <p class="card-text">Crafting an intuitive e-commerce browsing experience as a love letter to 
+            East Side Games Studio’s merch culture</p>        
+        </div>
       </div>
     </section>
-    <section class="landing-section reveal">
-      <div class="landing-text">
-        <h2>Data & Beyond</h2>
-        <p>Designing the Data & Beyond Conference hosted by UBC BizTech, UBC’s largest technology club</p>
-          <a>Coming Soon <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-22ee7e7c=""><polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-22ee7e7c=""></polygon></svg></a>
-      </div>
-      <div class="landing-img">
-        <a href="#" target="_blank"
-          ><img src="/Assets/landing-databeyond.png" alt="logo" class="logo-img"
-        /></a>
+    <section class="landing-section projects">
+      
+      <div class="card">
+        <img src="/Assets/cover-databeyond.png" alt="Card image">
+        <div class="card-content">
+          <p class="subheading">VISUAL</p>
+          <h3 class="card-title">Data & Beyond</h3>
+          <p class="card-text">Branding the first data science conference by UBC’s largest tech club </p>        
+        </div>
       </div>
     </section>
+    
+    
     <script type="text/javascript" src="app.js"></script>
     <script> 
     let projectBtn = document.getElementById('scrollToProjects'); 

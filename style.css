@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,11 +10,63 @@ body {
   background-color: #fefefe;
 }
 
-p {
-  font-size: 1.4rem;
-  word-wrap: normal;
-  font-family: "EB Garamond";
+/* nav bar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fefefe;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  z-index: 999;
+  
 }
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #141414;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.nav-item {
+  padding-left: 4rem;
+  font-weight: 250;
+}
+
+.nav-logo {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.navbar button {
+  justify-self: right;
+  align-self: right;
+}
+
+.hamburger {
+  display: none;
+}
+/* end nav bar styling */
+
+/* page styling */
+p {
+  font-size: 1.2rem;
+  word-wrap: normal;
+  line-height: 135%;
+}
+
 br {
   display: block; /* makes it have a width */
   content: ""; /* clears default height */
@@ -63,67 +115,90 @@ a i {
   color: #141414;
 }
 
-.landing-text {
-  text-align: left;
-  flex: 50%;
-  margin: 5rem;
-  font-size: 2rem;
-  word-wrap: normal;
-}
-
-.landing-text h3 {
-  font-weight: 400;
-}
-
-
-.landing-img {
-  text-align: center;
-  flex: 50%;
-  margin: 3.5rem;
-}
-
 .project-text {
   text-align: left;
   flex: 100%;
   margin: 2rem;
 }
 
-.project-img {
-  max-width: 100%;
-  text-align: center;
+.project-section {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.subheading {
+  color: #9F9D9D;
+  font-weight: 550;
+}
+/* end page styling */
+
+/* card styling */
+html {
+  font-size: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 30rem;
   margin: 2rem;
+  background-color: #141414;
+  color: #fefefe;
 }
 
-.full-screen {
-  background-image: url("poe-thumbnail.png");
-  max-width: 100vw; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: none;
-  margin: none;
-}
-
-.button {
-  background: none;
-  border-radius: 50px;
-  padding: 1rem 1.7rem;
-  color: #86898C;
-  border: 0px solid #141414;
-  font-family: 'Helvetica';
-  margin-top: 1.8rem;
-  font-size: 1rem;
-  box-shadow: 7.87012px 7.87012px 15.7402px rgba(114, 142, 171, 0.1), 
-  -23.6104px -23.6104px 78.7012px #FFFFFF, 15.7402px 15.7402px 78.7012px 
-  rgba(111, 140, 176, 0.41);
-}
-
-
-.button:hover {
-  background: #7B9BEB;
-  color: #fcf9f7;
+.card:hover {
+  background-color: #fefefe;
+  color: #141414;
+  transition: all 0.5s ease;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem;
+  flex: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
   }
+  .card {
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+/* end card styling */
 
 /* dark mode */
 .dark-mode {
@@ -179,60 +254,9 @@ a i {
   background-color: #EAE5E5;
   box-shadow: none;
 }
-
-/* nav bar styling */
-.navbar {
-  background-color: 7.87012px 7.87012px 15.7402px rgba(114, 142, 171, 0.1), 
-  -23.6104px -23.6104px 78.7012px #FFFFFF, 15.7402px 15.7402px 78.7012px 
-  rgba(111, 140, 176, 0.41);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-item {
-  margin-left: 2.5rem;
-}
-
-.nav-logo {
-  width: 2.5rem;
-  border-radius: 50%;
-}
-
-.navbar button {
-  justify-self: right;
-  align-self: right;
-}
-
-.hamburger {
-  display: none;
-}
+/* end dark mode */
 
 /* landing page styling */
-.landing-section h1 {
-  background-size: cover;
-  color: #141414;
-  -webkit-background-clip: text;
-	background-clip: text;
-  font-size: 4.8rem;
-  text-align: left;
-  flex: 50%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 3rem;
-  margin-right: 6rem;
-  word-wrap: normal;
-  font-family: 'EB Garamond';
-  line-height: 110%;
-  font-weight: 430;
-}
 
 .landing p,
 h1 {
@@ -240,31 +264,44 @@ h1 {
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 }
 
-.nav-menu a {
-  text-decoration: none;
-  color: #141414;
-}
-
-.nav-menu a:hover {
-  text-decoration: underline;
-  font-weight: 700;
-}
-
 .landing-section {
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: left;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
-@keyframes scale {
-  100% {
-    transform: scale(1);
-  }
+.landing-text {
+  text-align: left;
+  flex: 50%;
+  margin: 5rem;
+  font-size: 2rem;
+  word-wrap: normal;
 }
 
+.bio {
+  font-size: 1.8rem;
+  padding-right: 40vw;
+  padding-top: 8rem;
+}
+
+.landing > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing-text h3 {
+  font-weight: 400;
+}
+/* end landing page styling*/
+
+/* image styling */
 .avatar {
   max-width: 30vw;
   border-radius: 50%;
@@ -281,30 +318,18 @@ h1 {
   margin: 0.5rem;
 }
 
-.landing-section p {
-  font-size: 1.8rem;
+.project-img {
+  max-width: 100%;
+  text-align: center;
+  margin: 2rem;
 }
 
-.landing-section a {
-  font-family: 'EB Garamond';
+.landing-img {
+  text-align: center;
+  flex: 50%;
+  margin: 3.5rem;
 }
-
-.landing-bio a {
-  font-family: 'EB Garamond';
-}
-
-.landing > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.subheading {
-  margin-top: 0.3rem;
-  color: grey;
-  font-weight: 200;
-}
+/* end image styling */
 
 /* animations*/
 .reveal {
@@ -323,6 +348,12 @@ h1 {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fadeInAnimation {
