@@ -257,6 +257,16 @@ html {
 /* end dark mode */
 
 /* landing page styling */
+section, .landing-section {
+  height: 100%;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  margin: 1rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
 
 .landing p,
 h1 {
@@ -308,10 +318,18 @@ h1 {
   margin: 0.5rem;
 }
 
+.cover-img {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-img {
+  display: block;
+  margin: 0 auto;
   max-width: 100%;
-  text-align: center;
-  margin: 2rem;
+  max-height: 100%;
 }
 
 .landing-img {
@@ -319,6 +337,7 @@ h1 {
   flex: 40%;
   margin: 1.5rem;
 }
+
 /* end image styling */
 
 /* animations*/
