@@ -67,6 +67,12 @@ p {
   line-height: 135%;
 }
 
+.writing {
+  font-size: 1rem;
+  word-wrap: normal;
+  line-height: 250%;
+}
+
 br {
   display: block; /* makes it have a width */
   content: ""; /* clears default height */
