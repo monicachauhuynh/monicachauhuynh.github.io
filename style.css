@@ -121,7 +121,7 @@ a i {
   margin: 2rem;
 }
 
-.project-section {
+.project-cover-section {
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -266,6 +266,11 @@ section, .landing-section {
   margin: 1rem;
   padding-left: 8rem;
   padding-right: 8rem;
+}
+
+.project-section {
+  padding-left: 18rem;
+  padding-right: 18rem;
 }
 
 .landing p,
@@ -477,7 +482,7 @@ h1 {
     padding: 2rem;
   }
 
-  .project-section {
+  .project-section, .project-cover-section {
     padding: 1.5rem;
     flex-direction: column;
   }
