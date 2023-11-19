@@ -39,23 +39,3 @@ function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
 }
-
-/* dark mode */
-const colorModeButton = document.querySelector(".color-mode");
-colorModeButton.addEventListener("click", colorMode);
-
-function colorMode() {
-  var element = document.body;
-  var navBar = document.querySelector(".navbar");
-  element.classList.toggle("dark-mode");
-  navBar.classList.toggle("dark-mode");
-  navMenu.classList.toggle("dark-mode");
-  hamburger.classList.toggle("dark-mode");
-}
-
-function scrollToSection(section) {
-  window.scrollTo({
-    top: document.querySelector(section).offsetTop,
-    behavior: 'smooth'
-  });
-}

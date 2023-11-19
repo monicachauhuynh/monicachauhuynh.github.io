@@ -7,11 +7,11 @@
     <title>Monica Huynh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="thumbnail" content="/Assets/thumbnail.png" />
     <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@250;550;600&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,380&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -22,67 +22,66 @@
     <header class="header">
       <nav class="navbar">
         <ul class="nav-menu">
-          <li class="nav-item hidden-mobile">
-            <a href="/"><img src="/Assets/icon.png" class="nav-logo" /></a>
+          <li class="nav-item">
+            <a id="scrollToProjects" class="nav-link">Work</a>
           </li>
           <li class="nav-item">
-            <a id="scrollToProjects" class="nav-link">Design</a>
-          </li>  
-          <li class="nav-item">
-            <a href="writing.html" class="nav-link">Writing</a>
+            <a href="/" class="nav-link">Play</a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-          </li>  
+            <a href="/" class="nav-link">About</a>
+          </li>
         </ul>
-        <div>
-          <button class="color-mode">
-            <i class="fa fa-moon-o"></i>
-          </button>
-        </div>
         <div class="hamburger">
           <a href=""><i class="fa fa-bars"></i></a>
         </div>
       </nav>
     </header>
-    <section class="landing-section bio fade">
-      <div>
-        <p class="hidden-mobile">Hello world. I'm</p>
-        <h2>Monica Huynh</h2>
-        <p>Product designer with a technical background. 
-          Passionate about coding prototypes and crafting better user experience through
-           problem-solving and aesthetics.</p>
-           <p>Currently exploring <a target="_blank" href="https://uxofai.com">the UX of AI</a> 🌱, 
-          <a href="writing.html">writing</a> ✍️, hunting desserts 🍰, and looking forward to the next sunny day in Vancouver ☀️</p>
-      </div>
-    </section>
-   
-     <section class="landing-section projects">
-      <div class="card" onclick="window.location.href='poe.html';">
-        <img src="/Assets/cover-poe.png" alt="Card image">
-        <div class="card-content">
-          <p class="subheading">UX / UI / STRATEGY</p>
-          <h3 class="card-title">Poe</h3>
-          <p class="card-text">Helping people select the best AI agents for their tasks and 
-            collectively explore use cases of generative AI</p>    
-        </div>
-      </div>
-      <div class="card" onclick="window.location.href='databeyond.html';">
-        <img src="/Assets/cover-databeyond.png" alt="Card image">
-        <div class="card-content">
-          <p class="subheading">VISUAL</p>
-          <h3 class="card-title">Data & Beyond</h3>
-          <p class="card-text">Branding the first data science conference by UBC’s largest tech club </p>        
-        </div>
-      </div>
-    </section>
-   
+
+    <div class="container">
+      <section class="section landing-section">
+        <img src="Assets/landing.png" class="landing-img"></img>
+        <h1>
+          Hello World. I'm Monica Huynh, <br class="hidden-mobile"></br> a <i>product designer</i> based in Vancouver.
+        </h1>
+        <p>Passionate about crafting human-centered experiences.</p>
+        <p>Prev @ KindWorks.AI, East Side Games Studio, UBC Psychology.</p>
+      </section>
+      <section class="section">
+        <h1>Recent Work</h1>
+         <div class="landing-container">
+          <section class="section"><img src="Assets/thumbnail-kw.png" class="landing-img"></img></section>
+          <section class="section">
+            <h1>KindWorks.AI</h1>
+            <p>UX Design Intern | 2023</p>
+            <p>Improving user engagement with an AI kindness agent through gamification design</p>
+          </section>
+         </div>
+         <div class="landing-container">
+          <section class="section"><img src="Assets/thumbnail-p.png" class="landing-img"></img></section>
+          <section class="section">
+            <h1>Poe</h1>
+            <p>UX Design Project | 2023</p>
+            <p>Helping people better select the best AI agents for their tasks and collectively explore use cases of AI</p>
+          </section>
+         </div>
+         <div class="landing-container">
+          <section class="section"><img src="Assets/thumbnail-db.png" class="landing-img"></img></section>
+          <section class="section">
+            <h1>Data & Beyond</h1>
+            <p>Director of Design | 2023</p>
+            <p>Leading design for the first data science conference by UBC BizTech, UBC’s largest tech club</p>
+          </section>
+         </div>
+      </section>
+    </div>
+
     <script type="text/javascript" src="app.js"></script>
-    <script> 
-    let projectBtn = document.getElementById('scrollToProjects'); 
-    projectBtn.addEventListener('click', () => scrollToSection('.projects'));  
-    let workBtn = document.getElementById('scrollToWork'); 
-    workBtn.addEventListener('click', () => scrollToSection('.projects'));  
+    <script>
+      let projectBtn = document.getElementById("scrollToProjects");
+      projectBtn.addEventListener("click", () => scrollToSection(".projects"));
+      let workBtn = document.getElementById("scrollToWork");
+      workBtn.addEventListener("click", () => scrollToSection(".projects"));
     </script>
   </body>
 </html>
