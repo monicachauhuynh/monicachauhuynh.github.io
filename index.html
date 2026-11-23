@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>sincerely, monica</title>
+    <meta name="description" content="taking up space">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Spectral:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>{{ name }}    <button id="theme-toggle" class="theme-toggle" type="button"></button></h1>
+        <h2>{{ tagline }}</h2>
+        <p class="intro">{{ manifesto }} </p>
+        <h2>checking in with the spirits</h2>
+        <div class="accordion">
+            <details id="mercury">
+                <summary>಄ is mercury in retrograde</summary>
+                <p id="mercury-result"></p>
+            </details>
+            <details id="moon">
+                <summary>☾ what phase of the moon is today</summary>
+                <p id="moon-result"></p>
+            </details>
+            <details id="tarot">
+                <summary>⟢ pull a tarot card</summary>
+                <p id="tarot-name"></p>
+                <p id="tarot-meaning" class="muted"></p>
+            </details>
+        </div>
+
+        <h2>journaling in public</h2>
+        <div class="accordion" id="journal"></div>
+
+        <h2>connecting</h2>
+        <div class="links">
+            <a href="https://are.na/monica-huynh" target="_blank">are.na</a>
+            <a href="https://cabinofmonica.substack.com" target="_blank">substack</a>
+            <a href="https://instagram.com/monicadotzip" target="_blank">instagram</a>
+            <a href="https://www.linkedin.com/in/monicachauhuynh" target="_blank">linkedin</a>
+            <a href="mailto:monicachauhuynh@gmail.com" target="_blank">email</a>
+        </div>
+
+        <footer>this site is coded by hand with pure, raw html in solidarity with <a href="https://html.energy/" target="_blank">@html.energy</a></footer>
+    </main>
+    <script src="constant.js"></script>
+    <script src="data.js"></script>
+    <script src="theme.js"></script>
+</body>
+
+</html>
