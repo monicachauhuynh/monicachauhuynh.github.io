@@ -8,7 +8,7 @@ function currentTheme() {
 
 function render() {
   const dark = currentTheme() === "dark";
-  toggle.textContent = dark ? "☾" : "☀";   // shows what you'd switch to
+  toggle.textContent = dark ? "☾" : "☼";   // shows what you'd switch to
   toggle.setAttribute("aria-label", dark ? "switch to light mode" : "switch to dark mode");
 }
 

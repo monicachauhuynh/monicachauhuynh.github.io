@@ -2,7 +2,6 @@
     --bg: #fefefe;
     --fg: #515151;
     --muted: #a8a8a8;
-    --accent: #2d1499;
     --size: 18px;
 }
 
@@ -12,6 +11,7 @@
         --fg: #9b9b9b;
         --muted: #666;
     }
+
 }
 
 /* visitor chose dark */
@@ -19,6 +19,16 @@
     --bg: #161616;
     --fg: #9b9b9b;
     --muted: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) body {
+        cursor: url("cursor-dark.png") 16 16, auto;
+    }
+}
+
+:root[data-theme="dark"] body {
+    cursor: url("cursor-dark.png") 16 16, auto;
 }
 
 .theme-toggle {
@@ -47,9 +57,10 @@ body {
     color: var(--fg);
     font-family: "EB Garamond", Times, serif;
     font-size: var(--size);
-    line-height: 1.36;
+    line-height: 1.33;
     -webkit-font-smoothing: antialiased;
     text-transform: lowercase;
+    cursor: url("cursor-light.png") 16 16, auto;
 }
 
 main {
@@ -66,11 +77,7 @@ a {
 }
 
 a:hover {
-    text-decoration-color: var(--accent);
-}
-
-a::after {
-    content: " ↗";
+    text-decoration: underline;
 }
 
 :focus-visible {
@@ -120,6 +127,7 @@ ul {
 footer {
     margin-top: 4rem;
     color: var(--muted);
+    font-style: italic;
 }
 
 .accordion details {
@@ -131,7 +139,13 @@ footer {
     justify-content: space-between;
     cursor: pointer;
     list-style: none;
+    text-decoration-color: var(--muted);
+    text-underline-offset: .2em;
     /* removes the triangle in Chrome and Firefox */
+}
+
+.accordion summary:hover {
+    text-decoration: underline;
 }
 
 .accordion summary::-webkit-details-marker {

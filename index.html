@@ -5,33 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="favicon.png" type="image/png">
     <title>sincerely, monica</title>
     <meta name="description" content="taking up space">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Spectral:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400"
         rel="stylesheet">
 </head>
 
 <body>
     <main>
-        <h1>{{ name }}    <button id="theme-toggle" class="theme-toggle" type="button"></button></h1>
+        <h1>{{ name }} <button id="theme-toggle" class="theme-toggle" type="button"></button></h1>
         <h2>{{ tagline }}</h2>
         <p class="intro">{{ manifesto }} </p>
         <h2>checking in with the spirits</h2>
         <div class="accordion">
             <details id="mercury">
-                <summary>಄ is mercury in retrograde</summary>
+                <summary>಄ is mercury in retrograde now</summary>
                 <p id="mercury-result"></p>
             </details>
             <details id="moon">
-                <summary>☾ what phase of the moon is today</summary>
+                <summary>☾ what phase is the moon in tonight</summary>
                 <p id="moon-result"></p>
             </details>
             <details id="tarot">
-                <summary>⟢ pull a tarot card</summary>
+                <summary>⟢ pull a tarot card for today</summary>
                 <p id="tarot-name"></p>
                 <p id="tarot-meaning" class="muted"></p>
             </details>
@@ -49,7 +50,9 @@
             <a href="mailto:monicachauhuynh@gmail.com" target="_blank">email</a>
         </div>
 
-        <footer>this site is coded by hand with pure, raw html in solidarity with <a href="https://html.energy/" target="_blank">@html.energy</a></footer>
+        <footer>the making of site is an attempt to take up space and exist as a human on the net. in solidarity with <a
+                href="https://html.energy/" target="_blank">@html.energy</a>, long live the handmade
+            web. sincerely, monica.</footer>
     </main>
     <script src="constant.js"></script>
     <script src="data.js"></script>
