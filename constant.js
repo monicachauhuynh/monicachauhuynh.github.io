@@ -72,8 +72,8 @@ const journal = [
     },
     {
         date: "2024-03-13",
-        title: "questions as care instead of extraction",
-        body: "dr. minelle mahtani at ubc (she's head of canadian studies now!) has forever changed who i am as a person. i'll never forget her dedication to journalism and her ability to hold conversations that are truly spacious and unapologetically humanist. i told everyone i got to take her class. on many long bus rides to see friends (thanks vancouver public transit) i binged on her entire podcast. i wanted to prolong her lectures in my mind that badly. \n\n 'a beautiful question gives as much as it asks,' answered don shafer from roundhouse studio in the live interview with my professor that took place right in our class room. 'whenever i'm wearing myself on, i lose an honest conversation. i don't know how to solve the world aside from having one conversation at a time.'",
+        title: "from the margins",
+        body: "creativity from the margins (grsj 308) by dr. minelle mahtani at ubc (she's head of canadian studies now!) has forever changed who i am as a person. i'll never forget her dedication to journalism and her ability to hold conversations that are truly spacious and unapologetically humanist. i told everyone i got to take her class. on many long bus rides to see friends (thanks vancouver public transit) i binged on her entire podcast. i wanted to prolong her lectures in my mind that badly. \n\n 'a beautiful question gives as much as it asks,' answered don shafer from roundhouse studio in the live interview with my professor that took place right in our class room. 'whenever i'm wearing myself on, i lose an honest conversation. i don't know how to solve the world aside from having one conversation at a time.'",
     },
     {
         date: "2024-01-30",
