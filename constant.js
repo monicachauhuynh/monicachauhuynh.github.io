@@ -1,6 +1,6 @@
 const content = {
     name: "monica · châu · huỳnh",
-    manifesto: "in this time of  violent extraction, i look toward reclaiming the world wide web as homebase for intimacy and care: playgrounds, things built by hand, metrics left out. my practice sits between design engineering and digital humanities, between the systemic and the personal. i was previously published on lit magazine and spaced out mag for '1807,' 'butterfly tattoos,' and 'half of a place.' by day, i work as a product designer building experiences, interfaces, and design systems. i hold a bachelor's degree from the university of british columbia, vancouver, canada, where i attended on the highest-value international major entrance scholarship.",
+    bio: "in this time of  violent extraction, i look toward reclaiming the web as home base for intimacy: playgrounds, things built by hand, metrics left out. my practice sits between design engineering and digital humanities, between the systemic and the personal. i was previously published on lit magazine and spaced out mag for '1807,' 'butterfly tattoos,' and 'half of a place.' by day, i work as a product designer, having built experiences, interfaces, and design systems for startups and mid-size teams. i hold a bachelor's degree from the university of british columbia, vancouver, canada, where i had just as much fun taking software classes as learning critical theory. i like long walks, genmaicha, and every kind of bún.",
     footer: "2026 © handmade in solidarity with @html.energy"
 }
 
