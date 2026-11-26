@@ -22,19 +22,13 @@
 
         <h1>{{ name }} <button id="theme-toggle" class="theme-toggle" type="button"></button></h1>
 
-        <h2>checking in with the spirits</h2>
+
         <div class="accordion">
             <details id="mercury">
-                <summary>಄ is mercury in retrograde now</summary>
-                <p id="mercury-result"></p>
-            </details>
-            <details id="moon">
-                <summary>☾ what phase is the moon in tonight</summary>
-                <p id="moon-result"></p>
+                <summary id="mercury-result">಄ is mercury in retrograde now</summary>
             </details>
             <details id="tarot">
-                <summary>⟢ pull a tarot card for today</summary>
-                <p id="tarot-name"></p>
+                <summary id="tarot-result">⟢ pull a tarot card for today</summary>
                 <p id="tarot-meaning" class="muted"></p>
             </details>
         </div>
@@ -43,20 +37,19 @@
         <div class="accordion" id="journal"></div>
 
 
-        <h2>{{ tagline }}</h2>
+        <h2>introducing</h2>
         <p class="intro">{{ manifesto }} </p>
 
-        <h2>connecting</h2>
-        <div class="links">
-            <a href="https://are.na/monica-huynh" target="_blank">are.na</a>
-            <a href="https://cabinofmonica.substack.com" target="_blank">substack</a>
-            <a href="https://instagram.com/monicadotzip" target="_blank">instagram</a>
-            <a href="https://www.linkedin.com/in/monicachauhuynh" target="_blank">linkedin</a>
-            <a href="mailto:monicachauhuynh@gmail.com" target="_blank">email</a>
-        </div>
-
-        <footer>2026 © coded by hand in solidarity with <a href="https://html.energy/" target="_blank">@html.energy</a>.
-            long live the handmade web.</footer>
+        <footer>
+            <div class="links">
+                <a href="https://are.na/monica-huynh" target="_blank">are.na</a>
+                <a href="https://cabinofmonica.substack.com" target="_blank">substack</a>
+                <a href="https://instagram.com/monicadotzip" target="_blank">instagram</a>
+                <a href="https://www.linkedin.com/in/monicachauhuynh" target="_blank">linkedin</a>
+                <a href="mailto:monicachauhuynh@gmail.com" target="_blank">email</a>
+            </div>
+            <div>{{ footer }}</div>
+        </footer>
     </main>
     <script src="constant.js"></script>
     <script src="data.js"></script>

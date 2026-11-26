@@ -1,8 +1,8 @@
 :root {
     --bg: #fefefe;
     --fg: #515151;
-    --muted: #a8a8a8;
-    --size: 15px;
+    --muted: #bdbdbd;
+    --size: 14px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -58,7 +58,7 @@ body {
     font-family: "Libertinus Serif", Times, serif;
     font-weight: 350;
     font-size: var(--size);
-    line-height: 1.44;
+    line-height: 1.22;
     -webkit-font-smoothing: antialiased;
     text-transform: lowercase;
     cursor: url("cursor-light.png") 16 16, auto;
@@ -67,7 +67,7 @@ body {
 main {
     max-width: 40rem;
     margin: 0 auto;
-    padding: 3rem 1.5rem 3rem;
+    padding: 2.5rem 1.5rem 2rem;
 }
 
 a {
@@ -78,7 +78,9 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    background: var(--fg);
+    color: var(--bg);
+    text-decoration-color: transparent;
 }
 
 :focus-visible {
@@ -102,11 +104,10 @@ h1 {
 h2 {
     color: var(--muted);
     margin: 2rem 0 .15rem;
-    font-style: italic;
 }
 
 p {
-    margin: 0 0 .75rem;
+    margin: 0 0 .55rem;
 }
 
 .muted {
@@ -126,9 +127,8 @@ ul {
 }
 
 footer {
-    margin-top: 4rem;
+    margin-top: 3rem;
     color: var(--muted);
-    font-style: italic;
 }
 
 .accordion details {
@@ -146,7 +146,9 @@ footer {
 }
 
 .accordion summary:hover {
-    text-decoration: underline;
+    background: var(--fg);
+    color: var(--bg);
+    text-decoration-color: transparent;
 }
 
 .accordion summary::-webkit-details-marker {

@@ -1,7 +1,7 @@
 const content = {
     name: "monica · châu · huỳnh",
-    tagline: "building towards joy · vancouver · sài gòn",
-    manifesto: "in this time of  violent extraction, i look toward reclaiming the world wide web as homebase for intimacy and care: playgrounds, things built by hand, metrics left out. my practice sits between design engineering and digital humanities, between the systemic and the personal."
+    manifesto: "in this time of  violent extraction, i look toward reclaiming the world wide web as homebase for intimacy and care: playgrounds, things built by hand, metrics left out. my practice sits between design engineering and digital humanities, between the systemic and the personal. i was previously published on lit magazine and spaced out mag for '1807,' 'butterfly tattoos,' and 'half of a place.' by day, i work as a product designer building experiences, interfaces, and design systems. i hold a bachelor's degree from the university of british columbia, vancouver, canada, where i attended on the highest-value international major entrance scholarship.",
+    footer: "© 2026 · coded in pure html in solidarity with @html.energy"
 }
 
 const journal = [
