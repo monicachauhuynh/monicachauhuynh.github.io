@@ -2,7 +2,7 @@
     --bg: #fefefe;
     --fg: #515151;
     --muted: #a8a8a8;
-    --size: 18px;
+    --size: 15px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,9 +55,10 @@ html {
 body {
     margin: 0;
     color: var(--fg);
-    font-family: "EB Garamond", Times, serif;
+    font-family: "Libertinus Serif", Times, serif;
+    font-weight: 350;
     font-size: var(--size);
-    line-height: 1.33;
+    line-height: 1.44;
     -webkit-font-smoothing: antialiased;
     text-transform: lowercase;
     cursor: url("cursor-light.png") 16 16, auto;
