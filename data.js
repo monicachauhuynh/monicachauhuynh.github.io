@@ -53,7 +53,7 @@ async function loadTarot() {
     const data = await res.json();
     const card = data.cards[0];
     const reversed = Math.random() < 0.5;
-    out.textContent = reversed ? `⟢ you pulled the ${card.name} (reversed) for today.` : `⟢ you pulled the ${card.name} for today.`;
+    out.textContent = reversed ? `⟢ you pulled ${card.name} (reversed) for today.` : `⟢ you pulled ${card.name} for today.`;
     meaningEl.textContent = reversed ? card.meaning_rev : card.meaning_up;
   } catch (err) {
     console.warn("tarot api failed:", err);
