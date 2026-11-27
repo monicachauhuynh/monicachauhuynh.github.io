@@ -85,6 +85,75 @@ const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
 const nodes = [];
 while (walker.nextNode()) nodes.push(walker.currentNode);
 
+
+/* spotify currently listening */
+
+const SPOTIFY_WORKER =
+  "https://spotify.monicachauhuynh.workers.dev";
+
+async function showSpotify() {
+  const out = document.getElementById("spotify-status");
+
+  if (!out) return;
+
+  try {
+    const res = await fetch(`${SPOTIFY_WORKER}/now`);
+    const data = await res.json();
+
+    out.replaceChildren();
+
+    if (data.error) {
+      out.textContent = "spotify not connected. ";
+
+      const link = document.createElement("a");
+      link.href = `${SPOTIFY_WORKER}/login`;
+      link.textContent = "connect spotify ↗";
+
+      out.append(link);
+      return;
+    }
+
+    if (!data.title) {
+      out.textContent = "nothing is playing right now";
+      return;
+    }
+
+    out.append(
+      document.createTextNode(
+        `${data.is_playing ? "listening to " : "paused: "}`
+      )
+    );
+
+    const link = document.createElement("a");
+    link.href = data.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = data.title;
+
+    out.append(link);
+
+    out.append(
+      document.createTextNode(` by ${data.artist}`)
+    );
+
+    if (!data.is_playing) {
+      out.append(document.createTextNode(" (paused)"));
+    }
+
+  } catch (error) {
+    console.error("Spotify request failed:", error);
+
+    out.textContent = "spotify is taking a little break";
+  }
+}
+
+// Initial request
+showSpotify();
+
+// Refresh every 30 seconds
+setInterval(showSpotify, 30000);
+
+
 /* on page load */
 showMercury();
 setInterval(showMercury, 1000);   
