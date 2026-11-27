@@ -7,11 +7,11 @@
 
 /* device is dark, and the visitor hasn't chosen light */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #161616;
-    --fg: #9b9b9b;
-    --muted: #666;
-  }
+    :root {
+        --bg: #161616;
+        --fg: #9b9b9b;
+        --muted: #666;
+    }
 }
 
 /* visitor chose dark */
@@ -122,14 +122,14 @@ ul {
 }
 
 .container {
-  width: 100%;
-  padding: 1rem 0rem;
-  overflow: hidden;
+    width: 100%;
+    padding: 1rem 0rem;
+    overflow: hidden;
 }
 
 .container img {
-  object-fit: contain;
-  display: block;
+    object-fit: contain;
+    display: block;
 }
 
 .links {
