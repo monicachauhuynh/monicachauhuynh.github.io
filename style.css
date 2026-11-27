@@ -2,7 +2,7 @@
     --bg: #fefefe;
     --fg: #797979;
     --muted: #bdbdbd;
-    --size: 14.5px;
+    --size: 15px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -167,6 +167,6 @@ footer {
 
 @media (max-width: 768px) {
     main {
-        padding: 1rem 0rem 1rem;
+        padding: .05rem 0rem .05rem;
     }
 }
