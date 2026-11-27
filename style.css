@@ -5,22 +5,6 @@
     --size: 12px;
 }
 
-/* device is dark, and the visitor hasn't chosen light */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #161616;
-        --fg: #9b9b9b;
-        --muted: #666;
-    }
-}
-
-/* visitor chose dark */
-:root[data-theme="dark"] {
-    --bg: #161616;
-    --fg: #9b9b9b;
-    --muted: #666;
-}
-
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) body {
         cursor: url("/assets/cursor-dark.png") 16 16, auto;
@@ -35,20 +19,6 @@
     --bg: #fefefe;
     --fg: #202020;
     --muted: #bdbdbd;
-}
-
-.theme-toggle {
-    font: inherit;
-    font-size: 1.2rem;
-    color: var(--muted);
-    background: none;
-    border: 0 !important;
-    padding: 0 !important;
-    cursor: pointer;
-}
-
-.theme-toggle:hover {
-    color: var(--fg);
 }
 
 * {
@@ -72,7 +42,7 @@ body {
 main {
     max-width: 28rem;
     margin: 0 auto;
-    padding: 3rem 0rem 1rem;
+    padding: 1rem 0rem 1rem;
 }
 
 a {
