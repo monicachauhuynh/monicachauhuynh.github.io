@@ -86,43 +86,153 @@ const nodes = [];
 while (walker.nextNode()) nodes.push(walker.currentNode);
 
 
-/* spotify currently listening */
+/* spotify activity */
+
 const SPOTIFY_WORKER =
   "https://spotify.monicachauhuynh.workers.dev";
 
-async function showSpotify() {
+const SPOTIFY_REFRESH_INTERVAL = 60 * 1000;
+const SPOTIFY_MAX_AGE = 8 * 60 * 60 * 1000;
+
+/* calculate time since last played */
+function timeAgo(timestamp) {
+  const elapsed = Math.max(0, Date.now() - new Date(timestamp).getTime());
+
+  const minutes = Math.floor(elapsed / 60000);
+
+  if (minutes < 1) {
+    return "1 minute ago";
+  }
+
+  if (minutes < 60) {
+    return `${minutes} minute${minutes === 1 ? "" : "s"} ago`;
+  }
+
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  if (remainingMinutes === 0) {
+    return `${hours} hour${hours === 1 ? "" : "s"} ago`;
+  }
+
+  return `${hours}h ${remainingMinutes}m ago`;
+}
+
+/* update elapsed time without fetching Spotify again */
+function updateSpotifyAge() {
   const out = document.getElementById("spotify-status");
-  if (!out) return;
+
+  if (!out || !out.dataset.playedAt) return;
+
+  const playedAt = out.dataset.playedAt;
+  const elapsed = Date.now() - new Date(playedAt).getTime();
+
+  if (elapsed > SPOTIFY_MAX_AGE) {
+    const label = document.getElementById("spotify-label");
+
+    label.textContent = "listening";
+    out.textContent = "no recent activity";
+    delete out.dataset.playedAt;
+
+    return;
+  }
+
+  const age = out.querySelector(".spotify-age");
+
+  if (age) {
+    age.textContent = ` · ${timeAgo(playedAt)}`;
+  }
+}
+
+/* get Spotify activity */
+async function showSpotify() {
+  const label = document.getElementById("spotify-label");
+  const out = document.getElementById("spotify-status");
+
+  if (!label || !out) return;
 
   try {
     const response = await fetch(`${SPOTIFY_WORKER}/now`);
     const data = await response.json();
 
     if (!response.ok || data.error) {
-      out.textContent = "spotify unavailable right now";
+      label.textContent = "spotify";
+      out.textContent = "unavailable right now";
       return;
     }
 
-    if (!data.is_playing || !data.title) {
-      out.textContent = "nothing playing right now";
+    /* no song found */
+    if (!data.title || !data.artist) {
+      label.textContent = "listening";
+      out.textContent = "no recent activity";
+      delete out.dataset.playedAt;
       return;
     }
+
+    /* create song link */
+    const link = document.createElement("a");
+
+    link.href = data.url || "#";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = `${data.title} · ${data.artist}`;
 
     out.replaceChildren();
 
-    const link = document.createElement("a");
-    link.href = data.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = `${data.title} - ${data.artist}`;
+    /* CASE 1: currently playing */
+    if (data.is_playing) {
+      label.textContent = "listening to";
 
-    out.appendChild(link);
+      out.appendChild(link);
+      delete out.dataset.playedAt;
+
+      return;
+    }
+
+    /* CASE 2: not playing — show last played song */
+    const playedAt = data.played_at || data.last_played_at;
+
+    if (!playedAt) {
+      label.textContent = "listening";
+      out.textContent = "no recent activity";
+      delete out.dataset.playedAt;
+
+      return;
+    }
+
+    const elapsed = Date.now() - new Date(playedAt).getTime();
+
+    /* only show songs played within the last 8 hours */
+    if (
+      !Number.isFinite(elapsed) ||
+      elapsed < 0 ||
+      elapsed > SPOTIFY_MAX_AGE
+    ) {
+      label.textContent = "listening";
+      out.textContent = "no recent activity";
+      delete out.dataset.playedAt;
+
+      return;
+    }
+
+    label.textContent = "listened to";
+
+    out.dataset.playedAt = playedAt;
+
+    const age = document.createElement("span");
+    age.className = "spotify-age";
+    age.textContent = ` · ${timeAgo(playedAt)}`;
+
+    out.append(link, age);
 
   } catch (error) {
     console.error("Spotify error:", error);
-    out.textContent = "spotify unavailable right now";
+
+    label.textContent = "spotify";
+    out.textContent = "unavailable right now";
   }
 }
+
 
 /* on page load */
 showMercury();
@@ -130,7 +240,8 @@ setInterval(showMercury, 1000);
 showSaigon();                    
 setInterval(showSaigon, 1000);   
 showSpotify();
-setInterval(showSpotify, 3000);
+setInterval(showSpotify, SPOTIFY_REFRESH_INTERVAL);
+setInterval(updateSpotifyAge, 60000);
 nodes.forEach((node) => {
   node.textContent = node.textContent.replace(
     /\{\{\s*(\w+)\s*\}\}/g,
