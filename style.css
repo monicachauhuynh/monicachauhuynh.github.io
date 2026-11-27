@@ -128,10 +128,15 @@ footer {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    list-style: none;
-    text-decoration-color: var(--muted);
-    text-underline-offset: .2em;
-    /* removes the triangle in Chrome and Firefox */
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.accordion summary p:last-child {
+    max-width: 60vw;
+    margin-left: auto;
+    text-align: right;
+    overflow-wrap: anywhere;
 }
 
 .accordion summary:hover {
