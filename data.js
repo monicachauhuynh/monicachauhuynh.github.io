@@ -1,45 +1,144 @@
 /* checking mercury retrograde */
+const TZ = "Asia/Ho_Chi_Minh";
 const RETROGRADES = [
-  ["2026-02-26", "2026-03-20"],
-  ["2026-06-29", "2026-07-23"],
-  ["2026-10-24", "2026-11-13"],
-  ["2027-02-09", "2027-03-03"],
-  ["2027-06-10", "2027-07-04"],
-  ["2027-10-07", "2027-10-28"],
-];
-const today = () => new Date().toLocaleDateString("sv"); // local date, yyyy-mm-dd
-function retroFromTable() {
-  return RETROGRADES.some(([start, end]) => today() >= start && today() <= end);
+  ["2026-02-26T06:48Z", "2026-03-20T19:33Z"],
+  ["2026-06-29T17:35Z", "2026-07-23T22:59Z"],
+  ["2026-10-24T07:13Z", "2026-11-13T15:55Z"],
+  ["2027-02-09T17:37Z", "2027-03-03T12:33Z"],
+  ["2027-06-10T18:15Z", "2027-07-04T19:41Z"],
+  ["2027-10-07T14:37Z", "2027-10-28T14:11Z"],
+].map(([start, end]) => [Date.parse(start), Date.parse(end)]);
+const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
+const prettyDate = (ms) =>
+  new Date(ms)
+    .toLocaleDateString("en-US", { timeZone: TZ, month: "long", day: "numeric", year: "numeric" })
+    .toLowerCase()
+
+function countdown(ms) {
+  const total = Math.max(0, Math.floor(ms / 1000));
+  const days = Math.floor(total / 86400);
+  const hours = Math.floor((total % 86400) / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  const seconds = total % 60;
+  return [
+    plural(days, "day"),
+    plural(hours, "hour"),
+    plural(minutes, "minute"),
+    plural(seconds, "second"),
+  ].join(", ");
 }
-async function loadMercury() {
-  const out = document.getElementById("mercury-result");
-  out.textContent = "಄ checking the sky…";
-  let retro;
+
+function mercury(now = Date.now()) {
+  const current = RETROGRADES.find(([start, end]) => now >= start && now < end);
+  const next = RETROGRADES.find(([start]) => start > now);
+  return {
+    retro: Boolean(current),
+    current,
+    next,
+    msLeft: current ? current[1] - now : null,
+    msUntilNext: next ? next[0] - now : null,
+  };
+}
+
+function showMercury() {
+  const m = mercury();
+  const out = document.getElementById("mercury-status");
+
+  if (m.retro) {
+    out.textContent = `active until ${prettyDate(m.current[1])} (${countdown(m.msLeft)} left)`;
+  } else if (m.next) {
+    out.textContent = `returns in ${countdown(m.msUntilNext)}`;
+  } else {
+    out.textContent = "no data of the next retrograde.";
+  }
+}
+
+/* timezone */
+function showSaigon() {
+  const time = new Date().toLocaleTimeString("en-US", {
+    timeZone: "Asia/Ho_Chi_Minh",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+  }).toLowerCase();
+
+  document.getElementById("saigon").textContent = `sài gòn, ${time}`;
+}
+
+let lastWeather = null;   // remembers the last good reading
+
+function renderWeather() {
+  const out = document.getElementById("weather");
+  if (!lastWeather) {
+    out.textContent = "can't see the sky right now · —°c";
+    return;
+  }
+  const { code, isDay, temp } = lastWeather;
+  out.textContent = `${weatherPhrase(code, isDay)} · ${Math.round(temp)}°c`;
+}
+
+async function showWeather() {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 6000);
+
   try {
-    const res = await fetch("https://mercuryretrogradeapi.com/api?date=today");
+    const url =
+      "https://api.open-meteo.com/v1/forecast?latitude=10.82&longitude=106.63" +
+      "&current=temperature_2m,weather_code,is_day";
+    const res = await fetch(url, { signal: controller.signal });
     if (!res.ok) throw new Error(res.status);
-    const data = await res.json();
-    console.log("mercury api:", data); // check the real shape here
-    if (typeof data.is_retrograde === "boolean") retro = data.is_retrograde;
-    else if (typeof data.phase === "string") retro = /retrograde/i.test(data.phase);
-    else throw new Error("unexpected response");
+
+    const c = (await res.json()).current;
+    lastWeather = { code: c.weather_code, isDay: c.is_day === 1, temp: c.temperature_2m };
   } catch (err) {
-    console.warn("mercury api failed, using backup table:", err);
-    retro = retroFromTable();
+    console.warn("weather failed:", err);   // keeps whatever reading we already had
+  } finally {
+    clearTimeout(timer);
   }
-  out.textContent = retro
-    ? "಄ mercury is in retrograde. watch your words, be gentle."
-    : "಄ mercury is direct. communication is flowing as usual.";
+
+  renderWeather();
 }
-const mercuryBox = document.getElementById("mercury");
-mercuryBox.addEventListener("toggle", () => {
-  if (mercuryBox.open && !mercuryBox.dataset.loaded) {
-    mercuryBox.dataset.loaded = "1";   // only check once
-    loadMercury();
-  }
+
+/* journal listing */
+const container = document.getElementById("journal");
+const entries = [...journal].sort((a, b) => b.date.localeCompare(a.date));
+entries.forEach((entry) => {
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
+  const time = document.createElement("time");
+  time.dateTime = entry.date;
+  time.className = "muted";
+  time.textContent = entry.date.replaceAll("-", " · ");
+  summary.append(time, " " + entry.title);
+  details.append(summary);
+  entry.body.split("\n\n").forEach((text) => {
+    const p = document.createElement("p");
+    p.textContent = text;
+    details.append(p);
+  });
+  container.append(details);
 });
 
-/* tarot reading */
+/* reference text */
+const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+const nodes = [];
+while (walker.nextNode()) nodes.push(walker.currentNode);
+
+/* on page load */
+showMercury();
+setInterval(showMercury, 1000);   
+showSaigon();                    
+setInterval(showSaigon, 1000);   
+showWeather();
+setInterval(showWeather, 10000);
+nodes.forEach((node) => {
+  node.textContent = node.textContent.replace(
+    /\{\{\s*(\w+)\s*\}\}/g,
+    (match, key) => content[key] ?? match
+  );
+});
+
+/* tarot reading 
 let tarotLoading = false;
 async function loadTarot() {
   if (tarotLoading) return; // ignore re-opens while a pull is in progress
@@ -65,38 +164,4 @@ async function loadTarot() {
 const tarotBox = document.getElementById("tarot");
 tarotBox.addEventListener("toggle", () => {
   if (tarotBox.open) loadTarot();   // runs on every open
-});
-
-/* journal listing */
-const container = document.getElementById("journal");
-// newest first
-const entries = [...journal].sort((a, b) => b.date.localeCompare(a.date));
-
-entries.forEach((entry) => {
-  const details = document.createElement("details");
-  const summary = document.createElement("summary");
-  const time = document.createElement("time");
-  time.dateTime = entry.date;
-  time.className = "muted";
-  time.textContent = entry.date.replaceAll("-", " · ");
-  summary.append(time, " " + entry.title);
-  details.append(summary);
-  entry.body.split("\n\n").forEach((text) => {
-    const p = document.createElement("p");
-    p.textContent = text;
-    details.append(p);
-  });
-  container.append(details);
-});
-
-/* reference text */
-const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-const nodes = [];
-while (walker.nextNode()) nodes.push(walker.currentNode);
-
-nodes.forEach((node) => {
-  node.textContent = node.textContent.replace(
-    /\{\{\s*(\w+)\s*\}\}/g,
-    (match, key) => content[key] ?? match
-  );
-});
+});*/

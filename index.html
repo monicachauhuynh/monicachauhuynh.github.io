@@ -20,30 +20,34 @@
 <body>
     <main>
 
-        <h1>{{ name }} <button id="theme-toggle" class="theme-toggle" type="button"></button></h1>
+        <button id="theme-toggle" class="theme-toggle" type="button"></button>
 
-
+        <h2></h2>
         <div class="accordion">
-            <details id="mercury">
-                <summary id="mercury-result">಄ is mercury in retrograde now</summary>
+            <details>
+                <summary>
+                    <p class="muted">greetings from</p>{{ name }}
+                </summary>
+                <p>{{ greetings }}</p>
             </details>
-            <details id="tarot">
-                <summary id="tarot-result">⟢ pull a tarot card for today</summary>
-                <p id="tarot-meaning" class="muted"></p>
+             <details>
+                <summary>
+                    <p class="muted">city</p>
+                    <p id="saigon">checking mercury</p>
+                </summary>
+                <p>{{ city }}</p>
+            </details>
+            <details>
+                <summary>
+                    <p class="muted">mercury retrograde</p>
+                    <p id="mercury-status">checking mercury</p>
+                </summary>
+                <p>{{ mercury }}</p>
             </details>
         </div>
 
         <h2>journal log</h2>
         <div class="accordion" id="journal"></div>
-
-
-        <h2>greetings</h2>
-        <div class="accordion">
-            <details>
-                <summary><p class="muted">2026</p>monica huynh</summary>
-                <p id="tarot-meaning">{{ bio }}</p>
-            </details>
-        </div>
 
 
         <footer>
