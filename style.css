@@ -31,6 +31,12 @@
     cursor: url("/assets/cursor-dark.png") 16 16, auto;
 }
 
+:root[data-theme="light"] {
+    --bg: #fefefe;
+    --fg: #202020;
+    --muted: #bdbdbd;
+}
+
 .theme-toggle {
     font: inherit;
     font-size: 1.2rem;
