@@ -20,12 +20,7 @@ function countdown(ms) {
   const hours = Math.floor((total % 86400) / 3600);
   const minutes = Math.floor((total % 3600) / 60);
   const seconds = total % 60;
-  return [
-    plural(days, "day"),
-    plural(hours, "hour"),
-    plural(minutes, "minute"),
-    plural(seconds, "second"),
-  ].join(", ");
+  return `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
 }
 
 function mercury(now = Date.now()) {
@@ -65,40 +60,6 @@ function showSaigon() {
   document.getElementById("saigon").textContent = `sài gòn, ${time}`;
 }
 
-let lastWeather = null;   // remembers the last good reading
-
-function renderWeather() {
-  const out = document.getElementById("weather");
-  if (!lastWeather) {
-    out.textContent = "can't see the sky right now · —°c";
-    return;
-  }
-  const { code, isDay, temp } = lastWeather;
-  out.textContent = `${weatherPhrase(code, isDay)} · ${Math.round(temp)}°c`;
-}
-
-async function showWeather() {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 6000);
-
-  try {
-    const url =
-      "https://api.open-meteo.com/v1/forecast?latitude=10.82&longitude=106.63" +
-      "&current=temperature_2m,weather_code,is_day";
-    const res = await fetch(url, { signal: controller.signal });
-    if (!res.ok) throw new Error(res.status);
-
-    const c = (await res.json()).current;
-    lastWeather = { code: c.weather_code, isDay: c.is_day === 1, temp: c.temperature_2m };
-  } catch (err) {
-    console.warn("weather failed:", err);   // keeps whatever reading we already had
-  } finally {
-    clearTimeout(timer);
-  }
-
-  renderWeather();
-}
-
 /* journal listing */
 const container = document.getElementById("journal");
 const entries = [...journal].sort((a, b) => b.date.localeCompare(a.date));
@@ -129,8 +90,6 @@ showMercury();
 setInterval(showMercury, 1000);   
 showSaigon();                    
 setInterval(showSaigon, 1000);   
-showWeather();
-setInterval(showWeather, 10000);
 nodes.forEach((node) => {
   node.textContent = node.textContent.replace(
     /\{\{\s*(\w+)\s*\}\}/g,
