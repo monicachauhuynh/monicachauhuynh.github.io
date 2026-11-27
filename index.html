@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 
 </head>
@@ -26,13 +25,13 @@
         <div class="accordion">
             <details>
                 <summary>
-                    <p class="muted">greetings from</p>{{ name }}
+                    <p class="muted">life receipt for</p>{{ name }}
                 </summary>
                 <p>{{ greetings }}</p>
             </details>
             <details>
                 <summary>
-                    <p class="muted">city</p>
+                    <p class="muted">timezone</p>
                     <p id="saigon">checking mercury</p>
                 </summary>
                 <p>{{ city }}</p>
@@ -58,9 +57,9 @@
             <a href="mailto:monicachauhuynh@gmail.com" target="_blank">email</a>
         </div>
 
-        <footer>
-            <div>{{ footer }}</div>
-        </footer>
+        <div class="container">
+            <img src="barcode.png" alt="Image">
+        </div>
     </main>
     <script src="constant.js"></script>
     <script src="data.js"></script>

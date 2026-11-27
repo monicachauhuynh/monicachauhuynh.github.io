@@ -1,17 +1,8 @@
 :root {
     --bg: #fefefe;
-    --fg: #797979;
+    --fg: #202020;
     --muted: #bdbdbd;
-    --size: 15px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #161616;
-        --fg: #9b9b9b;
-        --muted: #666;
-    }
-
+    --size: 12px;
 }
 
 /* visitor chose dark */
@@ -36,8 +27,8 @@
     font-size: 1.2rem;
     color: var(--muted);
     background: none;
-    border: 0;
-    padding: 0;
+    border: 0 !important;
+    padding: 0 !important;
     cursor: pointer;
 }
 
@@ -55,11 +46,11 @@ html {
 
 body {
     color: var(--fg);
-    font-family: "Libertinus Serif", Times, serif;
-    font-weight: 300;
+    font-family: "Roboto Mono", Times, serif;
+    font-weight: 350;
     font-size: var(--size);
     -webkit-font-smoothing: antialiased;
-    text-transform: lowercase;
+    text-transform: uppercase;
     cursor: url("cursor-light.png") 16 16, auto;
 }
 
@@ -90,7 +81,7 @@ a:hover {
 h1,
 h2 {
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 350;
     margin: 0;
 }
 
@@ -119,6 +110,17 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.container img {
+  object-fit: contain;
+  display: block;
 }
 
 .links {

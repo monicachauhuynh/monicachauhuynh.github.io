@@ -40,11 +40,11 @@ function showMercury() {
   const out = document.getElementById("mercury-status");
 
   if (m.retro) {
-    out.textContent = `active until ${prettyDate(m.current[1])} (${countdown(m.msLeft)} left)`;
+    out.textContent = `until ${prettyDate(m.current[1])} (${countdown(m.msLeft)} left)`;
   } else if (m.next) {
-    out.textContent = `returns in ${countdown(m.msUntilNext)}`;
+    out.textContent = `in ${countdown(m.msUntilNext)}`;
   } else {
-    out.textContent = "no data of the next retrograde.";
+    out.textContent = "no data of the next retrograde";
   }
 }
 
