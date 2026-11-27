@@ -2,7 +2,7 @@
     --bg: #fefefe;
     --fg: #797979;
     --muted: #bdbdbd;
-    --size: 13px;
+    --size: 14.5px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -124,7 +124,8 @@ ul {
 .links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 1rem;
+    justify-content: space-between;
+    gap: 0;
 }
 
 footer {
