@@ -5,6 +5,15 @@
     --size: 12px;
 }
 
+/* device is dark, and the visitor hasn't chosen light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161616;
+    --fg: #9b9b9b;
+    --muted: #666;
+  }
+}
+
 /* visitor chose dark */
 :root[data-theme="dark"] {
     --bg: #161616;
@@ -14,12 +23,12 @@
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) body {
-        cursor: url("cursor-dark.png") 16 16, auto;
+        cursor: url("/assets/cursor-dark.png") 16 16, auto;
     }
 }
 
 :root[data-theme="dark"] body {
-    cursor: url("cursor-dark.png") 16 16, auto;
+    cursor: url("/assets/cursor-dark.png") 16 16, auto;
 }
 
 .theme-toggle {
@@ -51,7 +60,7 @@ body {
     font-size: var(--size);
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
-    cursor: url("cursor-light.png") 16 16, auto;
+    cursor: url("/assets/cursor-light.png") 16 16, auto;
 }
 
 main {
