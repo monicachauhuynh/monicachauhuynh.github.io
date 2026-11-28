@@ -20,7 +20,7 @@ function countdown(ms) {
   const hours = Math.floor((total % 86400) / 3600);
   const minutes = Math.floor((total % 3600) / 60);
   const seconds = total % 60;
-  return `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
+  return `${days}d · ${hours}h · ${minutes}m  · ${seconds}s`;
 }
 
 function mercury(now = Date.now()) {
@@ -57,7 +57,7 @@ function showSaigon() {
     second: "2-digit",
   }).toLowerCase();
 
-  document.getElementById("saigon").textContent = `sài gòn, ${time}`;
+  document.getElementById("saigon").textContent = `sài gòn · ${time}`;
 }
 
 /* journal listing */
@@ -101,18 +101,18 @@ function timeAgo(timestamp) {
   const minutes = Math.floor(elapsed / 60000);
 
   if (minutes < 1) {
-    return "1 minute ago";
+    return "1m ago";
   }
 
   if (minutes < 60) {
-    return `${minutes} minute${minutes === 1 ? "" : "s"} ago`;
+    return `${minutes}m ago`;
   }
 
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
 
   if (remainingMinutes === 0) {
-    return `${hours} hour${hours === 1 ? "" : "s"} ago`;
+    return `${hours}h ago`;
   }
 
   return `${hours}h ${remainingMinutes}m ago`;
